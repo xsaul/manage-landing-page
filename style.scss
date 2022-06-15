@@ -1,0 +1,764 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$desktop-2: 1024px;
+$tablet: 768px;
+$mobile-1: 425px;
+$mobile-2: 375px;
+
+@mixin desktop-2 {
+  @media (max-width: #{$desktop-2}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile-1 {
+  @media (max-width: #{$mobile-1}) {
+    @content;
+  }
+}
+
+@mixin mobile-2 {
+  @media (max-width: #{$mobile-2}) {
+    @content;
+  }
+}
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem;
+
+    @include tablet {
+      font-size: 18px;
+      width: 65rem;
+    }
+
+    @include mobile-1 {
+      padding: 3rem;
+    }
+
+    img {
+      @include mobile-1 {
+        width: 200%;
+      }
+    }
+
+    .links {
+      @include mobile-1 {
+        display: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: hsl(233, 12%, 13%);
+        margin: 0 1rem;
+      }
+
+      a:hover {
+        color: hsl(227, 12%, 61%);
+      }
+    }
+
+    button {
+      border: none;
+      background-color: hsl(12, 88%, 59%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      @include desktop-2 {
+        margin-right: -5rem;
+      }
+
+      @include tablet {
+        font-size: 17px;
+      }
+
+      @include mobile-1 {
+        display: none;
+      }
+    }
+    button:hover {
+      background-color: hsl(12, 76%, 69%);
+    }
+
+    #burger {
+      display: none;
+
+      @include mobile-1 {
+        display: block;
+        width: 17%;
+        position: absolute;
+        left: 65rem;
+      }
+    }
+    #close {
+      display: none;
+
+      @include mobile-1 {
+        // display: block;
+        width: 17%;
+        position: absolute;
+        left: 65rem;
+        top: 2.5rem;
+      }
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+    // display: flex;
+    position: absolute;
+    left: 12rem;
+    flex-direction: column;
+    z-index: 2;
+    background-color: #fff;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
+    padding: 5.5rem 20rem;
+
+    a {
+      text-decoration: none;
+      color: black;
+      margin: 1.8rem 0;
+      font-size: 37px;
+      cursor: pointer;
+    }
+  }
+
+  #first {
+    display: flex;
+
+    @include mobile-1 {
+      flex-direction: column-reverse;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+
+      @include tablet {
+        margin-top: 4rem;
+      }
+
+      @include mobile-1 {
+        margin-left: 23rem;
+        width: 125%;
+      }
+
+      h1 {
+        width: 68%;
+        font-size: 38px;
+        margin-bottom: 8rem;
+
+        @include tablet {
+          width: 81%;
+        }
+
+        @include mobile-1 {
+          width: 115%;
+          font-size: 64px;
+        }
+
+        @include mobile-2 {
+          width: 140%;
+        }
+      }
+
+      p {
+        line-height: 1.7rem;
+        color: hsl(227, 12%, 61%);
+        margin-left: -3rem;
+        margin-top: -6.5rem;
+        width: 60%;
+
+        @include tablet {
+          margin-left: -1.5rem;
+          width: 72%;
+          font-size: 20px;
+        }
+
+        @include mobile-1 {
+          width: 134%;
+          font-size: 37px;
+          line-height: 3.7rem;
+        }
+      }
+
+      button {
+        border: none;
+        background-color: hsl(12, 88%, 59%);
+        color: #fff;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        margin-left: -22rem;
+        margin-top: 2rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        @include desktop-2 {
+          margin-left: -18rem;
+        }
+
+        @include tablet {
+          margin-left: -12rem;
+          font-size: 20px;
+        }
+
+        @include mobile-1 {
+          border-radius: 76px;
+          padding: 2.5rem 4rem;
+          margin-top: 4rem;
+          margin-left: -5rem;
+          font-size: 37px;
+        }
+      }
+
+      button:hover {
+        background-color: hsl(12, 76%, 69%);
+      }
+    }
+
+    .right {
+      #pattern {
+        z-index: 0;
+        width: 95%;
+        margin-top: -2rem;
+
+        @include tablet {
+          width: 160%;
+          margin-top: 0rem;
+          margin-left: 9rem;
+        }
+
+        @include mobile-1 {
+          width: 209%;
+          margin-top: -6rem;
+          margin-left: 9rem;
+        }
+      }
+
+      #hero {
+        z-index: 1;
+        position: absolute;
+        top: 1rem;
+        left: 33rem;
+
+        @include mobile-1 {
+          left: 8rem;
+          width: 210%;
+        }
+      }
+    }
+  }
+
+  #second {
+    display: flex;
+    margin-top: 4rem;
+
+    @include desktop-2 {
+      margin-top: 10rem;
+    }
+
+    @include tablet {
+      width: 63rem;
+    }
+
+    @include mobile-1 {
+      flex-direction: column;
+      margin-top: 29rem;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      margin-top: -6rem;
+
+      @include tablet {
+        margin-top: -21rem;
+        width: 132%;
+      }
+
+      @include mobile-1 {
+        width: 115%;
+      }
+
+      h2 {
+        margin: 2.2rem;
+        font-size: 33px;
+
+        @include mobile-1 {
+          font-size: 48px;
+        }
+      }
+
+      p {
+        color: hsl(227, 12%, 61%);
+        line-height: 1.8rem;
+        margin-left: -6rem;
+        width: 67%;
+
+        @include desktop-2 {
+          margin-left: -3rem;
+        }
+
+        @include mobile-1 {
+          width: 69%;
+          font-size: 34px;
+          line-height: 3.8rem;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+        margin-left: 5rem;
+      }
+
+      @include mobile-1 {
+        margin-top: 7rem;
+      }
+
+      .card {
+        margin: 1.2rem 2.5rem;
+        display: flex;
+        align-items: center;
+
+        .text {
+          margin-left: 2rem;
+
+          @include tablet {
+            font-size: 20px;
+          }
+
+          h3 {
+            @include mobile-1 {
+              font-size: 33px;
+            }
+          }
+
+          p {
+            @include mobile-1 {
+              font-size: 28px;
+              color: hsl(227, 12%, 61%);
+              line-height: 3.3rem;
+              margin-top: 3rem;
+            }
+          }
+        }
+
+        span {
+          background-color: hsl(12, 88%, 59%);
+          padding: 0.5rem 1.5rem;
+          border-radius: 20px;
+          color: #fff;
+
+          @include tablet {
+            margin-top: -5rem;
+          }
+
+          @include mobile-1 {
+            margin-top: -16rem;
+            padding: 0.5rem 2.5rem;
+            border-radius: 32px;
+            font-size: 31px;
+          }
+        }
+      }
+    }
+
+    .img {
+      z-index: 0;
+      position: absolute;
+      left: -19rem;
+      top: 21rem;
+
+      @include mobile-1 {
+        left: -17rem;
+        top: -40rem;
+      }
+
+      img {
+        width: 64%;
+      }
+    }
+  }
+
+  #third {
+    margin-top: 8rem;
+
+    @include desktop-2 {
+      margin-top: 10rem;
+    }
+
+    @include tablet {
+      width: 66rem;
+    }
+
+    h2 {
+      display: flex;
+      justify-content: center;
+
+      @include desktop-2 {
+        margin-left: 5rem;
+      }
+
+      @include mobile-1 {
+        margin-left: 6rem;
+        font-size: 50px;
+      }
+    }
+
+    .cards {
+      display: flex;
+      margin: 3rem 0 0 23rem;
+
+      @include desktop-2 {
+        margin: 3rem 1.2rem 0 5.2rem;
+      }
+
+      @include tablet {
+        margin: 3rem 1.2rem 0 1.2rem;
+      }
+
+      .avatar-card {
+        width: 57%;
+        margin: 0 1rem;
+
+        @include tablet {
+          margin: 0 2rem;
+        }
+
+        @include mobile-1 {
+          width: 85%;
+          margin: 0 4rem;
+        }
+
+        img {
+          width: 20%;
+          margin-left: 11.5rem;
+
+          @include mobile-1 {
+            margin-left: 24.5rem;
+          }
+        }
+
+        .card-text {
+          background-color: hsl(0, 0%, 98%);
+          padding: 2.3rem 1.3rem;
+
+          @include tablet {
+            width: 120%;
+          }
+
+          h3 {
+            margin-left: 9.5rem;
+
+            @include desktop-2 {
+              margin-left: 6rem;
+            }
+
+            @include mobile-1 {
+              font-size: 40px;
+              margin-left: 22rem;
+            }
+          }
+
+          p {
+            font-size: 14px;
+            width: 89%;
+            margin-left: 2rem;
+            margin-top: 1rem;
+            line-height: 1.4rem;
+
+            @include desktop-2 {
+              width: 96%;
+              margin-left: 1rem;
+            }
+
+            @include tablet {
+              font-size: 18px;
+              line-height: 1.8rem;
+            }
+
+            @include mobile-1 {
+              width: 100%;
+              color: hsl(227, 12%, 61%);
+              font-size: 33px;
+              line-height: 3.8rem;
+            }
+          }
+        }
+      }
+    }
+
+    .dot-container {
+      margin-left: 1rem;
+      margin-top: 2rem;
+
+      @include mobile-1 {
+        margin-left: 6rem;
+      }
+
+      .dot {
+        // display: none;
+        height: 30px;
+        width: 30px;
+        margin: 0 0.8rem;
+        background-color: #fff;
+        border: 1px solid hsl(12, 88%, 59%);
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+
+        @include mobile-1 {
+          height: 45px;
+          width: 45px;
+        }
+      }
+      .active {
+        background-color: hsl(12, 88%, 59%);
+      }
+    }
+
+    button {
+      margin-left: 36rem;
+      margin-top: 3rem;
+      border: none;
+      background-color: hsl(12, 88%, 59%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      box-shadow: 4px 6px 5px 0px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      @include desktop-2 {
+        margin-left: 33rem;
+      }
+
+      @include tablet {
+        font-size: 21px;
+        margin-left: 32rem;
+      }
+
+      @include mobile-1 {
+        border-radius: 52px;
+        padding: 1.5rem 2rem;
+        margin-top: 9rem;
+        margin-left: 28.5rem;
+        font-size: 39px;
+      }
+    }
+    button:hover {
+      background-color: hsl(12, 76%, 69%);
+    }
+  }
+
+  #forth {
+    margin-top: 8rem;
+    background-color: hsl(12, 88%, 59%);
+    padding: 2.5rem 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include desktop-2 {
+      width: 73.2rem;
+    }
+
+    @include mobile-1 {
+      flex-direction: column;
+    }
+
+    h2 {
+      width: 26%;
+      color: #fff;
+
+      @include mobile-1 {
+        width: 45%;
+        font-size: 55px;
+      }
+    }
+
+    button {
+      border: none;
+      background-color: #fff;
+      color: hsl(12, 88%, 59%);
+      font-weight: 700;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      @include mobile-1 {
+        border-radius: 70px;
+        padding: 2rem 3rem;
+        font-size: 30px;
+        margin-top: 5rem;
+      }
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  }
+
+  footer {
+    background-color: hsl(233, 12%, 13%);
+    display: flex;
+    justify-content: space-around;
+    padding: 2.5rem 0;
+
+    @include desktop-2 {
+      width: 73.2rem;
+    }
+
+    @include mobile-1 {
+      flex-direction: column-reverse;
+    }
+
+    .left {
+      img {
+        @include mobile-1 {
+          display: none;
+        }
+      }
+      .socials {
+        margin-top: 2rem;
+
+        @include mobile-1 {
+          margin-left: 20rem;
+        }
+
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-size: 20px;
+          margin: 0 0.5rem;
+          transition: all 0.2s ease;
+          cursor: pointer;
+
+          @include mobile-1 {
+            font-size: 48px;
+            margin: 0 1.8rem;
+          }
+        }
+
+        a:hover {
+          color: hsl(12, 88%, 59%);
+        }
+      }
+    }
+    .center {
+      display: flex;
+      flex-direction: column;
+
+      @include mobile-1 {
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+      }
+
+      a {
+        text-decoration: none;
+        margin: 0.4rem 0;
+        color: #fff;
+        font-weight: 400;
+        transition: all 0.2s ease;
+        cursor: pointer;
+
+        @include mobile-1 {
+          font-size: 30px;
+          color: hsl(227, 12%, 61%);
+          margin: 1.2rem 0;
+        }
+      }
+
+      a:hover {
+        color: hsl(12, 88%, 59%);
+      }
+    }
+    .right {
+      .input-box {
+        @include mobile-1 {
+          margin: 2.5rem 0;
+        }
+      }
+      input {
+        padding: 0.5rem;
+        border-radius: 20px;
+        border: none;
+        margin-left: 7.5rem;
+
+        @include mobile-1 {
+          padding: 1.5rem 2rem;
+          border-radius: 30px;
+          margin-left: 18.5rem;
+          font-size: 26px;
+          font-weight: 600;
+          color: hsl(227, 12%, 61%);
+        }
+      }
+
+      button {
+        padding: 0.5rem 0.9rem;
+        border: none;
+        border-radius: 20px;
+        background-color: hsl(12, 88%, 59%);
+        color: #fff;
+        margin-left: 0.5rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+
+        @include mobile-1 {
+          margin-left: 1.5rem;
+          font-size: 30px;
+          border-radius: 53px;
+          padding: 1.5rem 2.9rem;
+        }
+      }
+
+      button:hover {
+        background-color: hsl(12, 76%, 69%);
+      }
+
+      p {
+        color: hsl(227, 12%, 61%);
+        margin-top: 5rem;
+        margin-left: 7rem;
+        font-size: 14px;
+
+        @include mobile-1 {
+          display: none;
+        }
+      }
+    }
+  }
+}
