@@ -298,7 +298,7 @@ body #first .right #hero {
   z-index: 1;
   position: absolute;
   top: 1rem;
-  left: 33rem;
+  left: 42rem;
 }
 
 @media (max-width: 425px) {
@@ -541,7 +541,7 @@ body #third .cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 3rem 0 0 23rem;
+  margin: 3rem 0 0 27rem;
 }
 
 @media (max-width: 1024px) {
@@ -679,7 +679,7 @@ body #third .dot-container .active {
 }
 
 body #third button {
-  margin-left: 36rem;
+  margin-left: 40rem;
   margin-top: 3rem;
   border: none;
   background-color: #f25f3a;
